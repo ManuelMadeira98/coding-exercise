@@ -1,3 +1,7 @@
-<div class="no-data" *ngIf="!currentComponent">
-  <h1>Select a element in the list</h1>
+<div class="no-data" *ngIf="!currentComponent; else elementView">
+	<h1>Select a element in the list</h1>
 </div>
+
+<ng-template #elementView>
+	<div class="display">{{ element | json }}</div>
+</ng-template>
